@@ -6,7 +6,7 @@ const useTodoState = (init) => {
     return {
         todos,
         addTodo: (todo) => {
-            const newTodos = [...todos, { id: Date.now(), title: todo, isDone: false }];
+            const newTodos = [...todos, { id: Date.now(), title: todo, state: 'incomplete' }];
             saveTodo(newTodos);
         },
         deleteTodo: (todoId) => {
@@ -14,7 +14,7 @@ const useTodoState = (init) => {
             saveTodo(newTodos);
         },
         changeTodoState: (todoId) => {
-            const newTodos = todos.map(todo => todo.id === todoId ? { ...todo, isDone: !todo.isDone } : todo);
+            const newTodos = todos.map(todo => todo.id === todoId ? { ...todo, state: todo.state === 'complete' ? 'incomplete' : 'complete' } : todo);
             saveTodo(newTodos);
         },
     }

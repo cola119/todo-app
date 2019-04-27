@@ -16,11 +16,11 @@ const TodoList = (props) => {
                     <ListItemText primary={todo.title} />
                     <ListItemSecondaryAction>
                         <Button
-                            color={todo.isDone ? "default" : "secondary"}
-                            variant={todo.isDone ? "outlined" : "contained"}
+                            color={todo.state === 'complete' ? "default" : "secondary"}
+                            variant={todo.state === 'complete' ? "outlined" : "contained"}
                             onClick={() => props.changeTodoState(todo.id)}
                         >
-                            {todo.isDone ? "Done" : "完了にする"}
+                            {todo.state === 'complete' ? "Done" : "完了にする"}
                         </Button>
                         <IconButton onClick={() => props.deleteTodo(todo.id)}>
                             <DeleteIcon />
