@@ -1,32 +1,18 @@
 import React from 'react';
 
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
+import SwitchForm from './Forms/SwitchForm';
 
 const FilterForm = (props) => {
+    const filterLabels = {
+        incomplete: "未完了のタスクを表示",
+        complete: "完了したタスクを表示",
+    }
     return (
-        <>
-            <FormControlLabel
-                control={
-                    <Switch
-                        checked={props.filter['incomplete']}
-                        onChange={() => props.handleFileter('incomplete')}
-                        value="incomplete"
-                    />
-                }
-                label="未完了のタスクを表示"
-            />
-            <FormControlLabel
-                control={
-                    <Switch
-                        checked={props.filter['complete']}
-                        onChange={() => props.handleFileter('complete')}
-                        value="complete"
-                    />
-                }
-                label="完了したタスクを表示"
-            />
-        </>
+        <SwitchForm
+            value={props.filter}
+            labels={Object.entries(filterLabels)}
+            onChange={(key) => props.handleFileter(key)}
+        />
     );
 };
 

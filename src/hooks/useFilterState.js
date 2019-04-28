@@ -4,8 +4,8 @@ const useFilterState = (init) => {
     const [filter, setFilter] = useState(init);
     return {
         filter,
-        handleFileter: (name) => {
-            setFilter({ ...filter, [name]: !filter[name] })
+        handleFileter: (key) => {
+            setFilter({ ...filter, [key]: !filter[key] })
         },
     }
 };

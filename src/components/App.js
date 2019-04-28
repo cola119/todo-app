@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import React, { useState } from 'react';
 
 import useTodoState from '../hooks/useTodoState';
 import useFilterState from '../hooks/useFilterState';
@@ -6,8 +7,6 @@ import useFilterState from '../hooks/useFilterState';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import FilterForm from './FilterForm';
-
-
 
 const App = () => {
 
