@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import useTodoState from './useTodoState';
-import useFilterState from './useFilterState';
+import useTodoState from '../hooks/useTodoState';
+import useFilterState from '../hooks/useFilterState';
 
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
@@ -14,13 +14,12 @@ const App = () => {
     const { todos, addTodo, deleteTodo, changeTodoState } = useTodoState([]);
     const { filter, handleFileter } = useFilterState({ incomplete: true, complete: true });
 
-
     return (
         <>
             <TodoForm
                 onSubmit={addTodo}
-                label="aaa"
-                placeholder="aaa"
+                label="タスクを記入してください"
+                placeholder="（例）Wantedlyフロントエンド課題"
             />
             <FilterForm
                 filter={filter}
