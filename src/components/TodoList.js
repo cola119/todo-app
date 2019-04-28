@@ -6,12 +6,13 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // import Typography from '@material-ui/core/Typography';
-// import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
+// import Button from '@material-ui/core/Button';
 import HighIcon from '@material-ui/icons/NewReleases';
-import MediumIcon from '@material-ui/icons/RadioButtonUnchecked';
+import MediumIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import CheckIcon from '@material-ui/icons/Check';
 
 const get_date = (_timestamp) => {
     const _d = new Date(_timestamp);
@@ -25,33 +26,46 @@ const get_date = (_timestamp) => {
     // return `${Y}/${m}/${d} ${H}:${i}:${s}`;
 }
 
+
+
 const TodoList = (props) => {
+    const isCompleted = todo => todo.state === 'complete';
+
+    const HighStyle = {
+        backgroundColor: "#FFF2F2"
+    }
+    const doneStyle = {
+        color: "gray",
+        textDecoration: "line-through"
+    }
     return (
         <List component="nav">
+            <Divider />
             {props.todos.map(todo => (
-                <ListItem key={todo.id} divider >
+                <ListItem
+                    key={todo.id}
+                    divider button
+                    onClick={() => props.changeTodoState(todo.id)}
+                    style={todo.priority === 'high' && !isCompleted(todo) ? HighStyle : {}}
+                >
                     <ListItemIcon>
-                        {todo.priority === 'high' ? <HighIcon /> : <MediumIcon />}
+                        {isCompleted(todo) ? <CheckIcon /> : todo.priority === 'high' ? <HighIcon color="secondary" /> : <MediumIcon />}
                     </ListItemIcon>
-                    <ListItemText inset={true}
+                    <ListItemText
+                        inset={true}
                         primary={
-                            todo.title
+                            <span style={isCompleted(todo) ? doneStyle : {}}>{todo.title}</span>
                         }
                         secondary={
                             get_date(todo.id)
                         }
                     />
                     <ListItemSecondaryAction>
-                        <Button
-                            color={todo.state === 'complete' ? "default" : "secondary"}
-                            variant={todo.state === 'complete' ? "text" : "outlined"}
-                            onClick={() => props.changeTodoState(todo.id)}
-                        >
-                            {todo.state === 'complete' ? "Done" : "完了"}
-                        </Button>
-                        <IconButton onClick={() => props.deleteTodo(todo.id)}>
-                            <DeleteIcon />
-                        </IconButton>
+                        {isCompleted(todo) &&
+                            <IconButton onClick={() => props.deleteTodo(todo.id)}>
+                                <DeleteIcon />
+                            </IconButton>
+                        }
                     </ListItemSecondaryAction>
                 </ListItem>
             ))}

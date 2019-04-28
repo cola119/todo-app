@@ -12,6 +12,7 @@ const SwitchForm = (props) => {
                     key={label[0]}
                     control={
                         <Switch
+                            color="primary"
                             checked={props.value[label[0]]}
                             onChange={() => props.onChange(label[0])}
                             value={label[0]}

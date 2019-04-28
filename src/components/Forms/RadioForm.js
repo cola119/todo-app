@@ -22,7 +22,7 @@ const RadioForm = (props) => {
                         <FormControlLabel
                             key={label[0]}
                             value={label[0]}
-                            control={<Radio color="primary" />}
+                            control={<Radio color="default" />}
                             label={label[1]}
                             labelPlacement="end"
                         />

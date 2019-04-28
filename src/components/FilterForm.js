@@ -5,7 +5,7 @@ import SwitchForm from './Forms/SwitchForm';
 const FilterForm = (props) => {
     const filterLabels = {
         incomplete: "未完了のタスクを表示",
-        complete: "完了したタスクを表示",
+        complete: "完了済みタスクを表示",
     }
     return (
         <SwitchForm

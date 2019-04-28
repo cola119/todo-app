@@ -8,13 +8,15 @@ import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import FilterForm from './FilterForm';
 
+import Grid from '@material-ui/core/Grid';
+
 const App = () => {
 
     const { todos, addTodo, deleteTodo, changeTodoState } = useTodoState([]);
     const { filter, handleFileter } = useFilterState({ incomplete: true, complete: true });
 
     return (
-        <>
+        <div >
             <TodoForm
                 onSubmit={addTodo}
                 label="タスクを記入してください"
@@ -25,11 +27,11 @@ const App = () => {
                 handleFileter={handleFileter}
             />
             <TodoList
-                todos={todos.filter(todo => filter[todo.state])}
+                todos={todos.sort((a, b) => b.id - a.id).filter(todo => filter[todo.state])}
                 deleteTodo={deleteTodo}
                 changeTodoState={changeTodoState}
             />
-        </>
+        </div>
     );
 };
 

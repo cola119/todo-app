@@ -33,7 +33,7 @@ const TodoForm = (props) => {
                 justify="center"
                 alignItems="center"
             >
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12}>
                     <TextForm
                         label={props.label}
                         placeholder={props.placeholder}
@@ -41,7 +41,7 @@ const TodoForm = (props) => {
                         value={todo.title}
                     />
                 </Grid>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12}>
                     <RadioForm
                         legend="優先度"
                         labels={Object.entries(priorityLabels)}
@@ -49,7 +49,7 @@ const TodoForm = (props) => {
                         onChange={e => setTodo({ ...todo, priority: e.target.value })}
                     />
                 </Grid>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12}>
                     <Button fullWidth variant="contained" color="primary" type="submit">add</Button>
                 </Grid>
             </Grid>
