@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
+const uid = () => Date.now().toString(16) + (Math.floor(10000) * Math.random()).toString(16);
+
 const useTodoState = (init) => {
     const [todos, saveTodos] = useState(init);
 
     return {
         todos,
         addTodo: (todo) => {
-            const newTodos = [...todos, { id: Date.now(), title: todo.title, priority: todo.priority, deadline: todo.deadline, state: 'incomplete' }];
+            const newTodos = [...todos, { id: uid(), title: todo.title, priority: todo.priority, deadline: todo.deadline, state: 'incomplete', created_at: Date.now() }];
             saveTodos(newTodos);
         },
         deleteTodo: (todoId) => {
@@ -18,10 +20,7 @@ const useTodoState = (init) => {
             saveTodos(newTodos);
         },
         // filters = [[key, filter], []]
-        filterTodos: filters => todos.filter(todo =>
-            filters.every(([key, filter]) =>
-                filter[todo[key]]
-            )).sort((a, b) => b.id - a.id)
+        filterTodos: filters => todos.filter(todo => filters.every(([key, filter]) => filter[todo[key]])).sort((a, b) => b.id - a.id)
     }
 };
 

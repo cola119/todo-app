@@ -56,7 +56,7 @@ const TodoList = (props) => {
                         }
                         secondary={
                             <>
-                                {get_date(todo.id)}<br />
+                                {get_date(todo.created_at)}<br />
                                 {todo.deadline}
                             </>
                         }
