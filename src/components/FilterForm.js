@@ -1,16 +1,14 @@
 import React from 'react';
 
-import SwitchForm from './Forms/SwitchForm';
+import CheckBoxForm from './Forms/CheckBoxForm';
+
 
 const FilterForm = (props) => {
-    const filterLabels = {
-        incomplete: "未完了のタスクを表示",
-        complete: "完了済みタスクを表示",
-    }
     return (
-        <SwitchForm
-            value={props.filter}
-            labels={Object.entries(filterLabels)}
+        <CheckBoxForm
+            labelText={(key, label) => `${label}(${props.todos.filter(todo => todo[props.labelKey] === key).length})`}
+            filter={props.filter}
+            labels={Object.entries(props.labels)}
             onChange={(key) => props.handleFileter(key)}
         />
     );

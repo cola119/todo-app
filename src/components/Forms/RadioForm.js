@@ -12,18 +12,18 @@ const RadioForm = (props) => {
             <FormControl component="fieldset">
                 <FormLabel component="legend">{props.legend}</FormLabel>
                 <RadioGroup
-                    aria-label="radios"
-                    name="radios"
+                    aria-label={props.legend}
+                    name={props.legend}
                     value={props.value}
                     onChange={(e) => props.onChange(e)}
                     row
                 >
-                    {props.labels.map(label => (
+                    {props.labels.map(([value, label]) => (
                         <FormControlLabel
-                            key={label[0]}
-                            value={label[0]}
-                            control={<Radio color="default" />}
-                            label={label[1]}
+                            key={value}
+                            value={value}
+                            control={<Radio color="primary" />}
+                            label={label}
                             labelPlacement="end"
                         />
                     ))}

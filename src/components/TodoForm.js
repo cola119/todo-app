@@ -14,21 +14,20 @@ const TodoForm = (props) => {
         low: "低い",
     }
 
-    const initial = { title: '', priority: 'medium' };
+    const initial = { title: '', priority: 'medium', deadline: 'other' };
 
     const [todo, setTodo] = useState(initial);
 
     const onSubmit = (e) => {
         e.preventDefault();
         props.onSubmit(todo);
-        setTodo(initial);
+        setTodo({ ...todo, title: '' });
     }
 
     return (
         <form onSubmit={onSubmit}>
             <Grid
                 container
-                // spacing={16}
                 direction="row"
                 justify="center"
                 alignItems="center"
@@ -39,6 +38,14 @@ const TodoForm = (props) => {
                         placeholder={props.placeholder}
                         onChange={e => setTodo({ ...todo, title: e.target.value })}
                         value={todo.title}
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <RadioForm
+                        legend="期限"
+                        labels={Object.entries(props.deadlineLabels)}
+                        value={todo.deadline}
+                        onChange={e => setTodo({ ...todo, deadline: e.target.value })}
                     />
                 </Grid>
                 <Grid item xs={12}>

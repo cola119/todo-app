@@ -1,5 +1,4 @@
 import React from 'react';
-// import React, { useState } from 'react';
 
 import useTodoState from '../hooks/useTodoState';
 import useFilterState from '../hooks/useFilterState';
@@ -8,26 +7,53 @@ import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import FilterForm from './FilterForm';
 
-import Grid from '@material-ui/core/Grid';
+// {key1: label2, key2: label2} => {key1: true, key2: true}
+const setDefaultFilter = (labels) => Object.fromEntries(Object.entries(labels).map(([key, val]) => [key, true]));
 
 const App = () => {
 
-    const { todos, addTodo, deleteTodo, changeTodoState } = useTodoState([]);
-    const { filter, handleFileter } = useFilterState({ incomplete: true, complete: true });
+    const stateLabels = {
+        incomplete: "未完了",
+        complete: "完了済み",
+    }
+    const deadlineLabels = {
+        today: "今日中",
+        tomorrow: "明日中",
+        week: "一週間",
+        other: "未定",
+    }
+
+    const { todos, addTodo, deleteTodo, changeTodoState, filterTodos } = useTodoState([]);
+
+    const { filter: stateFilter, handleFilter: handleStateFileter } = useFilterState(setDefaultFilter(stateLabels));
+
+    const { filter: deadlineFilter, handleFilter: handleDeadlineFileter } = useFilterState(setDefaultFilter(deadlineLabels));
 
     return (
-        <div >
+        <div>
             <TodoForm
                 onSubmit={addTodo}
                 label="タスクを記入してください"
                 placeholder="（例）Wantedlyフロントエンド課題"
+                deadlineLabels={deadlineLabels}
             />
             <FilterForm
-                filter={filter}
-                handleFileter={handleFileter}
+                todos={todos}
+                labels={stateLabels}
+                labelKey="state"
+                filter={stateFilter}
+                handleFileter={handleStateFileter}
+            />
+            <br />
+            <FilterForm
+                todos={todos}
+                labels={deadlineLabels}
+                labelKey="deadline"
+                filter={deadlineFilter}
+                handleFileter={handleDeadlineFileter}
             />
             <TodoList
-                todos={todos.sort((a, b) => b.id - a.id).filter(todo => filter[todo.state])}
+                todos={filterTodos([["state", stateFilter], ["deadline", deadlineFilter]])}
                 deleteTodo={deleteTodo}
                 changeTodoState={changeTodoState}
             />
