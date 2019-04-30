@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TodoForm />のスナップショット 1`] = `
+exports[`<TodoForm /> <TodoForm />のスナップショット 1`] = `
 <form
   onSubmit={[Function]}
 >
@@ -71,7 +71,7 @@ exports[`<TodoForm />のスナップショット 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-6-63"
     >
       <fieldset
         className="MuiFormControl-root-98"
@@ -90,7 +90,7 @@ exports[`<TodoForm />のスナップショット 1`] = `
             className="MuiFormControlLabel-root-154"
           >
             <span
-              className="MuiButtonBase-root-175 MuiIconButton-root-169 MuiPrivateSwitchBase-root-165 MuiRadio-root-160 MuiRadio-colorPrimary-163"
+              className="MuiButtonBase-root-175 MuiIconButton-root-169 MuiPrivateSwitchBase-root-165 MuiRadio-root-160 MuiRadio-colorPrimary-163 MuiPrivateSwitchBase-checked-166 MuiRadio-checked-161"
               onBlur={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
@@ -115,17 +115,17 @@ exports[`<TodoForm />のスナップショット 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
                   />
                 </svg>
                 <input
-                  checked={false}
+                  checked={true}
                   className="MuiPrivateSwitchBase-input-168"
                   disabled={false}
                   name="期限"
                   onChange={[Function]}
                   type="radio"
-                  value="hoge"
+                  value="today"
                 />
               </span>
               <span
@@ -135,7 +135,7 @@ exports[`<TodoForm />のスナップショット 1`] = `
             <span
               className="MuiTypography-root-187 MuiTypography-body1-196 MuiFormControlLabel-label-159"
             >
-              hogehoge
+              今日中
             </span>
           </label>
           <label
@@ -177,7 +177,7 @@ exports[`<TodoForm />のスナップショット 1`] = `
                   name="期限"
                   onChange={[Function]}
                   type="radio"
-                  value="foo"
+                  value="tomorrow"
                 />
               </span>
               <span
@@ -187,14 +187,118 @@ exports[`<TodoForm />のスナップショット 1`] = `
             <span
               className="MuiTypography-root-187 MuiTypography-body1-196 MuiFormControlLabel-label-159"
             >
-              foofoo
+              明日まで
+            </span>
+          </label>
+          <label
+            className="MuiFormControlLabel-root-154"
+          >
+            <span
+              className="MuiButtonBase-root-175 MuiIconButton-root-169 MuiPrivateSwitchBase-root-165 MuiRadio-root-160 MuiRadio-colorPrimary-163"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
+            >
+              <span
+                className="MuiIconButton-label-174"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-178"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                  />
+                </svg>
+                <input
+                  checked={false}
+                  className="MuiPrivateSwitchBase-input-168"
+                  disabled={false}
+                  name="期限"
+                  onChange={[Function]}
+                  type="radio"
+                  value="week"
+                />
+              </span>
+              <span
+                className="MuiTouchRipple-root-249"
+              />
+            </span>
+            <span
+              className="MuiTypography-root-187 MuiTypography-body1-196 MuiFormControlLabel-label-159"
+            >
+              一週間
+            </span>
+          </label>
+          <label
+            className="MuiFormControlLabel-root-154"
+          >
+            <span
+              className="MuiButtonBase-root-175 MuiIconButton-root-169 MuiPrivateSwitchBase-root-165 MuiRadio-root-160 MuiRadio-colorPrimary-163"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
+            >
+              <span
+                className="MuiIconButton-label-174"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-178"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                  />
+                </svg>
+                <input
+                  checked={false}
+                  className="MuiPrivateSwitchBase-input-168"
+                  disabled={false}
+                  name="期限"
+                  onChange={[Function]}
+                  type="radio"
+                  value="other"
+                />
+              </span>
+              <span
+                className="MuiTouchRipple-root-249"
+              />
+            </span>
+            <span
+              className="MuiTypography-root-187 MuiTypography-body1-196 MuiFormControlLabel-label-159"
+            >
+              未定
             </span>
           </label>
         </div>
       </fieldset>
     </div>
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-6-63"
     >
       <fieldset
         className="MuiFormControl-root-98"

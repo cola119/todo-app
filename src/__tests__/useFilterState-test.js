@@ -11,15 +11,15 @@ beforeEach(() => {
 });
 
 describe('useTextField', () => {
-    test('should have an handleFilter function', () => {
+    it('should have an handleFilter function', () => {
         expect(filterState.handleFilter).toBeInstanceOf(Function);
     });
 
-    test('should have correct initial state', () => {
+    it('should have correct initial state', () => {
         expect(filterState.filter).toEqual(initialFilter);
     });
 
-    test('filter[key1] should have changed', () => {
+    it('filter[key1] should have changed', () => {
         act(() => filterState.handleFilter("key1"))
         expect(filterState.filter).toEqual({ key1: false, key2: true });
     });

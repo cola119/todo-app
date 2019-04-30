@@ -18,7 +18,7 @@ const CheckBoxForm = (props) => {
                             value={label}
                         />
                     }
-                    label={props.labelText ? props.labelText(key, label) : label}
+                    label={props.labelText(key, label)}
                 />
             ))}
         </>

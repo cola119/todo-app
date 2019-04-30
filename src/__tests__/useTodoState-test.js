@@ -13,24 +13,24 @@ beforeEach(() => {
 const testTodo = { title: "foo", priority: "medium", deadline: "todo" }
 
 describe('useTextField', () => {
-    test('should have functions', () => {
+    it('should have functions', () => {
         expect(todoState.addTodo).toBeInstanceOf(Function);
         expect(todoState.deleteTodo).toBeInstanceOf(Function);
         expect(todoState.changeTodoState).toBeInstanceOf(Function);
         expect(todoState.filterTodos).toBeInstanceOf(Function);
     });
 
-    test('should have correct initial state', () => {
+    it('should have correct initial state', () => {
         expect(todoState.todos).toEqual(initial);
     });
 
-    test('test addTodo', () => {
+    it('test addTodo', () => {
         const n = 5;
         [...Array(n)].map(() => act(() => todoState.addTodo(testTodo)));
         expect(todoState.todos.length).toBe(n);
     });
 
-    test('test deleteTodo', () => {
+    it('test deleteTodo', () => {
         const n = 5;
         [...Array(n)].map(() => act(() => todoState.addTodo(testTodo)));
         const someId = todoState.todos[1].id;
@@ -38,7 +38,7 @@ describe('useTextField', () => {
         expect(todoState.todos.length).toBe(n - 1);
     });
 
-    test('test changeTodoState', () => {
+    it('test changeTodoState', () => {
         act(() => todoState.addTodo(testTodo));
         expect(todoState.todos[0].state).toBe("incomplete");
         const id = todoState.todos[0].id;
@@ -46,7 +46,7 @@ describe('useTextField', () => {
         expect(todoState.todos[0].state).toBe("complete");
     });
 
-    test('test filterTodos', () => {
+    it('test filterTodos', () => {
         const todos = [
             { title: "title1", priority: "high", deadline: "today" },
             { title: "title2", priority: "medium", deadline: "tomorrow" },

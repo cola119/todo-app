@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TodoList />のスナップショット 1`] = `
+exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
 <nav
   className="MuiList-root-1 MuiList-padding-2"
 >
@@ -25,7 +25,6 @@ exports[`<TodoList />のスナップショット 1`] = `
       onTouchMove={[Function]}
       onTouchStart={[Function]}
       role="button"
-      style={Object {}}
       tabIndex="0"
     >
       <div
@@ -64,7 +63,6 @@ exports[`<TodoList />のスナップショット 1`] = `
         >
           2018/02/21 20:16:50
           <br />
-          today
         </p>
       </div>
       <span
@@ -93,7 +91,6 @@ exports[`<TodoList />のスナップショット 1`] = `
       onTouchMove={[Function]}
       onTouchStart={[Function]}
       role="button"
-      style={Object {}}
       tabIndex="0"
     >
       <div
@@ -137,7 +134,6 @@ exports[`<TodoList />のスナップショット 1`] = `
         >
           2018/02/21 20:16:51
           <br />
-          tomorrow
         </p>
       </div>
       <span
@@ -208,7 +204,6 @@ exports[`<TodoList />のスナップショット 1`] = `
       onTouchMove={[Function]}
       onTouchStart={[Function]}
       role="button"
-      style={Object {}}
       tabIndex="0"
     >
       <div
@@ -247,7 +242,6 @@ exports[`<TodoList />のスナップショット 1`] = `
         >
           2018/02/21 20:16:49
           <br />
-          week
         </p>
       </div>
       <span
@@ -276,7 +270,6 @@ exports[`<TodoList />のスナップショット 1`] = `
       onTouchMove={[Function]}
       onTouchStart={[Function]}
       role="button"
-      style={Object {}}
       tabIndex="0"
     >
       <div
@@ -320,7 +313,6 @@ exports[`<TodoList />のスナップショット 1`] = `
         >
           2018/02/20 21:30:53
           <br />
-          other
         </p>
       </div>
       <span
@@ -391,7 +383,6 @@ exports[`<TodoList />のスナップショット 1`] = `
       onTouchMove={[Function]}
       onTouchStart={[Function]}
       role="button"
-      style={Object {}}
       tabIndex="0"
     >
       <div
@@ -430,7 +421,6 @@ exports[`<TodoList />のスナップショット 1`] = `
         >
           2018/02/20 21:31:04
           <br />
-          week
         </p>
       </div>
       <span

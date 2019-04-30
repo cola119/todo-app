@@ -28,9 +28,6 @@ const get_date = (timestamp) => {
 const TodoList = (props) => {
     const isCompleted = todo => todo.state === 'complete';
 
-    const HighStyle = {
-        // backgroundColor: "#FFF2F2"
-    }
     const doneStyle = {
         color: "gray",
         textDecoration: "line-through"
@@ -44,7 +41,6 @@ const TodoList = (props) => {
                     key={todo.id}
                     divider button
                     onClick={() => props.changeTodoState(todo.id)}
-                    style={todo.priority === 'high' && !isCompleted(todo) ? HighStyle : {}}
                 >
                     <ListItemIcon>
                         {isCompleted(todo) ? <CheckIcon /> : todo.priority === 'high' ? <HighIcon color="secondary" /> : <MediumIcon />}
@@ -57,7 +53,7 @@ const TodoList = (props) => {
                         secondary={
                             <>
                                 {get_date(todo.created_at)}<br />
-                                {todo.deadline}
+                                {/* {todo.deadline} */}
                             </>
                         }
                     />

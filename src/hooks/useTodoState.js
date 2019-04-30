@@ -19,8 +19,7 @@ const useTodoState = (init) => {
             const newTodos = todos.map(todo => todo.id === todoId ? { ...todo, state: todo.state === 'complete' ? 'incomplete' : 'complete' } : todo);
             saveTodos(newTodos);
         },
-        // filters = [[key, filter], []]
-        filterTodos: filters => todos.filter(todo => filters.every(([key, filter]) => filter[todo[key]])).sort((a, b) => b.id - a.id)
+        filterTodos: filters => todos.filter(todo => filters.every(([key, filter]) => filter[todo[key]]))
     }
 };
 

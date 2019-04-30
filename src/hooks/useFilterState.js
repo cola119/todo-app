@@ -4,7 +4,6 @@ import { useState } from 'react';
 const useFilterState = (init) => {
 
     const [filter, setFilter] = useState(init);
-
     return {
         filter,
         handleFilter: (key) => {
