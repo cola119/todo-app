@@ -64,13 +64,15 @@ describe('useTextField', () => {
         filters[0][1]["high"] = false;
         expect(todoState.filterTodos(filters).length).toBe(3);
         todoState.filterTodos(filters).map(todo => expect(todo.priority).not.toBe("high"));
+        filters[0][1]["high"] = true;
         // tomorrow除外
         filters[1][1]["tomorrow"] = false;
-        expect(todoState.filterTodos(filters).length).toBe(2);
+        expect(todoState.filterTodos(filters).length).toBe(3);
         todoState.filterTodos(filters).map(todo => expect(todo.deadline).not.toBe("tomorrow"));
+        filters[1][1]["tomorrow"] = true;
         //incomplete除外
         filters[2][1]["incomplete"] = false;
-        act(() => todoState.changeTodoState(todoState.todos[2].id));
+        act(() => todoState.changeTodoState(todoState.todos[0].id));
         expect(todoState.filterTodos(filters).length).toBe(1);
         todoState.filterTodos(filters).map(todo => expect(todo.state).not.toBe("incomplete"));
     });

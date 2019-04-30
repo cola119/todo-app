@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
-<nav
+<ul
   className="MuiList-root-1 MuiList-padding-2"
 >
   <hr
@@ -62,7 +62,6 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
           2018/02/21 20:16:50
-          <br />
         </p>
       </div>
       <span
@@ -133,7 +132,6 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
           2018/02/21 20:16:51
-          <br />
         </p>
       </div>
       <span
@@ -241,7 +239,6 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
           2018/02/21 20:16:49
-          <br />
         </p>
       </div>
       <span
@@ -312,7 +309,6 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
           2018/02/20 21:30:53
-          <br />
         </p>
       </div>
       <span
@@ -420,7 +416,6 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
           2018/02/20 21:31:04
-          <br />
         </p>
       </div>
       <span
@@ -431,5 +426,5 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
       className="MuiListItemSecondaryAction-root-77"
     />
   </li>
-</nav>
+</ul>
 `;

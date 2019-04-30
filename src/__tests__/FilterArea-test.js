@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import FilterArea from '../components/FilterArea';
+import FilterArea from '../components/Organisms/FilterArea';
 
 const label = {
     key1: "hoge",

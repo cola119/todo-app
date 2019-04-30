@@ -1,10 +1,10 @@
 import React from 'react';
+
 import withWidth from '@material-ui/core/withWidth';
 
 import Divider from '@material-ui/core/Divider';
-
-import CheckBoxForm from './Molecules/Forms/CheckBoxForm';
-import Expansion from './Atoms/Expansion';
+import CheckBoxForm from '../Molecules/Forms/CheckBoxForm';
+import Expansion from '../Atoms/Expansion';
 
 const FilterArea = (props) => {
     // ex) 完了(2) : key=complete, label=完了

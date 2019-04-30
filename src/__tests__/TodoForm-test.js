@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+// import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import TodoForm from '../components/TodoForm';
+import TodoForm from '../components/Organisms/TodoForm';
 
 const formInitial = { title: '', priority: 'medium', deadline: 'today' };
 const deadlineLabels = {

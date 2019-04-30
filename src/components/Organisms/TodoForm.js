@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import TextForm from './Molecules/Forms/TextForm';
-import RadioForm from './Molecules/Forms/RadioForm';
+import TextForm from '../Molecules/Forms/TextForm';
+import RadioForm from '../Molecules/Forms/RadioForm';
 
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';

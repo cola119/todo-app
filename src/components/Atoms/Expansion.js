@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -17,5 +18,10 @@ const Expansion = (props) => {
         </ExpansionPanel>
     );
 }
+
+Expansion.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired
+};
 
 export default Expansion;

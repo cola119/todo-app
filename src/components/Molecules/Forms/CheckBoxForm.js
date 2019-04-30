@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -23,6 +24,17 @@ const CheckBoxForm = (props) => {
             ))}
         </>
     );
+};
+
+CheckBoxForm.defaultProps = {
+    labelText: (key, label) => label
+};
+
+CheckBoxForm.propTypes = {
+    labels: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+    onChange: PropTypes.func.isRequired,
+    labelText: PropTypes.func,
+    filter: PropTypes.objectOf(PropTypes.bool).isRequired
 };
 
 export default CheckBoxForm;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TextField from '@material-ui/core/TextField';
 
@@ -19,6 +20,13 @@ const TextForm = (props) => {
             value={props.value}
         />
     );
+};
+
+TextForm.propTypes = {
+    label: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
 };
 
 export default TextForm;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -31,6 +32,13 @@ const RadioForm = (props) => {
             </FormControl>
         </>
     );
+};
+
+RadioForm.propTypes = {
+    legend: PropTypes.string.isRequired,
+    labels: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 
 export default RadioForm;

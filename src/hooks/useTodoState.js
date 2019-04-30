@@ -8,7 +8,7 @@ const useTodoState = (init) => {
     return {
         todos,
         addTodo: (todo) => {
-            const newTodos = [...todos, { id: uid(), title: todo.title, priority: todo.priority, deadline: todo.deadline, state: 'incomplete', created_at: Date.now() }];
+            const newTodos = [{ id: uid(), title: todo.title, priority: todo.priority, deadline: todo.deadline, state: 'incomplete', created_at: Date.now() }, ...todos];
             saveTodos(newTodos);
         },
         deleteTodo: (todoId) => {
