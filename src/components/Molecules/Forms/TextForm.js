@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import TextField from '@material-ui/core/TextField';
 
-const TextForm = (props) => {
+const TextForm = React.memo((props) => {
     return (
         <TextField
             required
@@ -20,7 +20,9 @@ const TextForm = (props) => {
             value={props.value}
         />
     );
-};
+}, (prevProps, nextProps) => {
+    return prevProps.value === nextProps.value;
+});
 
 TextForm.propTypes = {
     label: PropTypes.string.isRequired,

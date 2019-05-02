@@ -6,7 +6,7 @@ const useFilterState = (init) => {
     const [filter, setFilter] = useState(() => Object.fromEntries(Object.entries(init).map(([key, val]) => [key, true])));
     return {
         filter,
-        handleFilter: (key) => setFilter(prev => ({ ...prev, [key]: !prev[key] })),
+        handleFilter: key => setFilter(prev => ({ ...prev, [key]: !prev[key] })),
     }
 };
 

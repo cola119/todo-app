@@ -12,18 +12,29 @@ import ListRow from '../Molecules/ListRow';
 
 const getDate = (timestamp) => {
     const _d = new Date(timestamp);
-    const Y = _d.getFullYear();
+    // const Y = _d.getFullYear();
     const m = ("0" + (_d.getMonth() + 1)).slice(-2);
     const d = ("0" + _d.getDate()).slice(-2);
     const H = ("0" + _d.getHours()).slice(-2);
     const i = ("0" + _d.getMinutes()).slice(-2);
-    const s = ("0" + _d.getSeconds()).slice(-2);
-    return `${Y}/${m}/${d} ${H}:${i}:${s}`;
+    // const s = ("0" + _d.getSeconds()).slice(-2);
+    return `${m}/${d} ${H}:${i}`;
+    // return `${Y}/${m}/${d} ${H}:${i}:${s}`;
 }
 
 const TodoList = (props) => {
+
     const isCompleted = todo => todo.state === 'complete';
+
     const leftIcon = todo => isCompleted(todo) ? <CheckIcon /> : todo.priority === 'high' ? <HighIcon color="secondary" /> : <MediumIcon />;
+
+    const periodString = todo => {
+        const start = getDate(todo.created_at);
+        const intervalDays = { "today": 1, "tomorrow": 2, week: 7, other: 0, };
+        const end = getDate(todo.created_at + intervalDays[todo.deadline] * 24 * 60 * 60 * 1000);
+        return `${start}~${end}`
+    }
+
     const doneStyle = {
         color: "gray",
         textDecoration: "line-through"
@@ -38,7 +49,7 @@ const TodoList = (props) => {
                     onRowClick={() => props.changeTodoState(todo.id)}
                     leftIcon={leftIcon(todo)}
                     primaryText={<span style={isCompleted(todo) ? doneStyle : {}}>{todo.title}</span>}
-                    secondaryText={getDate(todo.created_at)}
+                    secondaryText={periodString(todo)}
                     secondaryAction={isCompleted(todo) &&
                         <IconButton onClick={() => props.deleteTodo(todo.id)}>
                             <DeleteIcon />

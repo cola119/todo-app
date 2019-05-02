@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-const RadioForm = (props) => {
+const RadioForm = React.memo((props) => {
     return (
         <>
             <FormControl component="fieldset">
@@ -32,7 +32,9 @@ const RadioForm = (props) => {
             </FormControl>
         </>
     );
-};
+}, (prevProps, nextProps) => {
+    return prevProps.value === nextProps.value;
+});
 
 RadioForm.propTypes = {
     legend: PropTypes.string.isRequired,
