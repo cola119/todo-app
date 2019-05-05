@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const uid = () => Date.now().toString(16) + (Math.floor(10000) * Math.random()).toString(16);
+const id = () => Date.now().toString(16) + (Math.floor(10000) * Math.random()).toString(16);
 
 const useTodoState = (init) => {
     const [todos, saveTodos] = useState(init);
@@ -8,7 +8,7 @@ const useTodoState = (init) => {
     return {
         todos,
         addTodo: (todo) => {
-            const newTodos = [{ id: uid(), title: todo.title, priority: todo.priority, deadline: todo.deadline, state: 'incomplete', created_at: Date.now() }, ...todos];
+            const newTodos = [{ id: id(), title: todo.title, priority: todo.priority, deadline: todo.deadline, state: 'incomplete', created_at: Date.now() }, ...todos];
             saveTodos(newTodos);
         },
         deleteTodo: (todoId) => {

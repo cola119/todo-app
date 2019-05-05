@@ -22,7 +22,7 @@ const App = () => {
     const priorityLabels = {
         high: "高い",
         medium: "普通",
-        low: "低い",
+        // low: "低い",
     }
 
     const formInitial = { title: '', priority: 'medium', deadline: 'today' };

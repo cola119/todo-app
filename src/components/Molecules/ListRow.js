@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -26,6 +27,14 @@ const ListRow = (props) => {
             </ListItem>
         </>
     );
+};
+
+ListRow.propTypes = {
+    onRowClick: PropTypes.func.isRequired,
+    leftIcon: PropTypes.element.isRequired,
+    primaryText: PropTypes.element.isRequired,
+    secondaryText: PropTypes.string.isRequired,
+    secondaryAction: PropTypes.any.isRequired,
 };
 
 export default ListRow;

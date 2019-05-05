@@ -61,7 +61,7 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
         <p
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
-          2018/02/21 20:16:50
+          02/21 20:16~02/22 20:16
         </p>
       </div>
       <span
@@ -131,7 +131,7 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
         <p
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
-          2018/02/21 20:16:51
+          02/21 20:16~02/23 20:16
         </p>
       </div>
       <span
@@ -238,7 +238,7 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
         <p
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
-          2018/02/21 20:16:49
+          02/21 20:16~02/28 20:16
         </p>
       </div>
       <span
@@ -308,7 +308,7 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
         <p
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
-          2018/02/20 21:30:53
+          02/20 21:30~02/20 21:30
         </p>
       </div>
       <span
@@ -415,7 +415,7 @@ exports[`<TodoList /> <TodoList />のスナップショット 1`] = `
         <p
           className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-74 MuiListItemText-secondary-39"
         >
-          2018/02/20 21:31:04
+          02/20 21:31~02/27 21:31
         </p>
       </div>
       <span

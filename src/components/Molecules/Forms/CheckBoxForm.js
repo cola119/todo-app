@@ -1,24 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import CheckBox from '../../Atoms/CheckBox';
 
 // labels=[[key, label], [], ...]
 const CheckBoxForm = (props) => {
     return (
         <>
             {props.labels.map(([key, label]) => (
-                <FormControlLabel
+                <CheckBox
                     key={key}
-                    control={
-                        <Checkbox
-                            color="primary"
-                            checked={props.filter[key]}
-                            onChange={() => props.onChange(key)}
-                            value={label}
-                        />
-                    }
+                    checked={props.filter[key]}
+                    onChange={() => props.onChange(key)}
+                    value={label}
                     label={props.labelText(key, label)}
                 />
             ))}
